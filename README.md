@@ -1,9 +1,9 @@
 # SODAQ ExpLoRer Guide
 
-This is a guide designed to help beginners set up a SODAQ ExpLoRer to connect to The Things Network.
+This guide is designed to help beginners set up a SODAQ ExpLoRer to connect to The Things Network.
 
 ## What you will need
-To Follow along with this guide you will need the following things:
+To follow this guide you will need the following things:
 - A SODAQ ExpLoRer which can be bought [here](https://shop.sodaq.com/explorerrn2903a-us.html)
 - A micro usb connector which is included with the SODAQ ExpLoRer
 - A computer to connect to the SODAQ ExpLoRer and write the code
@@ -15,35 +15,35 @@ To get started you will first need to install the Arduino IDE which can be downl
 After downloading the appropriate option for your system, run the installer and complete the installation process.
 Once the program is done installing, open the Arduino IDE.
 
-Now that we are in the Arduino IDE we will need to install the SODAQ ExpLoRer Board and some libraries that we will use throughout the guide.
+Now that we are in the Arduino IDE, install the SODAQ ExpLoRer Board and some libraries that will be use throughout the guide.
 - To do this, first navigate to the Preferences window by going to `File > Preferences`.
 - Now, in the textbox named 'Additional Boards Manager URLs:' paste the following `http://downloads.sodaq.net/package_sodaq_samd_index.json`.
 - Then click the Ok button
 
-This will alow us to find the package that includes the SODAQ ExpLoRer board.
+This will allow you to find the package that includes the SODAQ ExpLoRer board.
 
 - Next navigate to the boards manager by going to `Tools > Board: > Boards Manager...`
 - Then using the search bar enter `SODAQ SAMD Boards` and install the package with the same name.
 - Once the package is finished installing click the close button.
 
-Now that we have installed the package we can select our SODAQ ExpLoRer Board.
+Now that we have installed the package, select your SODAQ ExpLoRer Board.
 
 - To do so navigate and click `Tools > Board: > SODAQ SAMD (32-bits ARM Cortex-M0+) Boards > SODAQ ExpLoRer`
 
-Now that we have selected the correct Board there are three Libraries that we must install.
+Now that you have selected the correct Board there are three Libraries to install.
 
 - First navigate to the Library Manager by going to `Tools > Manage Libraries...`.
 
-Next, much like you installed the `SODAQ SAMD Boards` in the Boards Manager, Search for and install the following libraries.
+Next, much like installing the `SODAQ SAMD Boards` in the Boards Manager, Search for and install the following libraries.
 
 - `Sodaq_RN2483`
 - `Sodaq_wdt`
 - `TheThingsNetwork`
 
-Once all of the installs are complete click close and you are now done with setting up the environment.
+Once all of the installs are complete, click close, as the environment is now finished setting up.
 
 ## Test that the SODAQ ExpLoRer is Working (Optional)
-To test that the SODAQ ExpLoRer is connected properly and working you can follow the following steps.
+To test that the SODAQ ExpLoRer is connected properly and working complete the following steps:
 
 - First, plug in your SODAQ ExpLoRa to your computer using the micro usb cable.
 - Then Navigate to `Tools > Port:` and ensure that the port that has the SODAQ device is selected.
@@ -135,15 +135,15 @@ void loop() {
 
 - Once you have copied the code into the Arduino IDE Click the arrow in the upper left corner to upload the code to the SODAQ ExpLoRer
 - After the code has finished uploading open the serial monitor by navigating to `Tools > Serial Monitor`
-- Finally, Copy down the 16 character EUI code from the Serial Monitor.
+- Finally, Copy the 16-character EUI code from the Serial Monitor.
 
 ## Step 3 - Sign Up on The Things Network
-Now that we have our SODAQ ExpLoRer EUI code we can add it to The Things Network by following the steps below.
+Now that  you have your SODAQ ExpLoRer EUI code, it can be added  to The Things Network by following the steps below.
 
 1. Create an account at [The Things Network](https://account.thethingsnetwork.org/register) or sign in if you already have an account
-2. Go to the consol by clicking on the profile icon and clicking the console option.
-3. select applications
-4. select add application
+2. Go to the console by clicking on the profile icon and clicking the console option.
+3. Select applications
+4. Select add application
 5. Fill out the application ID with a unique name, add a Description and press `add application`.
 6. Press the `register device` button in the devices section.
 7. Enter a unique name for the device ID
@@ -172,13 +172,12 @@ const char *appKey = "00000000000000000000000000000000";
 ```
 -  Click the arrow in the upper left corner to upload the code to the SODAQ ExpLoRer
 
-After waiting for the code to upload you can now open the Serial Monitor through `Tools > Serial Monitor` and see the output. if everything went well it should post a Successful transmission every 10 seconds which you will also be able to see on the things network website in the device data section.  
+After waiting for the code to upload you can now open the Serial Monitor through `Tools > Serial Monitor` and see the output. If everything went well it should post a Successful transmission every 10 seconds which you will also be able to see on the things network website in the device data section.  
 
 
 ## Step 5 - Customising your message
-Right now the example code is sending one byte of information to The Thing Network to tell if the LED is on or off.
-We can change this to a number of different things like the output of different sensors.
-For now we will change the output from the state of the LED to the state of the onboard button located on the opposite side of the board from the USB port.
+Right now, the example code is sending one byte of information to The Thing Network to tell if the LED is on or off. This can be changed to a number of different things like the output of different sensors.
+For now, the output will be changed from the state of the LED to the state of the onboard button located on the opposite side of the board from the USB port.
 
 This can be done by adding `pinMode(BUTTON, INPUT);` to the setup function to initialize the pushbutton pin as an input.
 Then changing the payload to be `payload[0] = (digitalRead(BUTTON) == HIGH) ? 1 : 0;`.
