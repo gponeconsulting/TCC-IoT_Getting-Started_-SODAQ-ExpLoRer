@@ -5,7 +5,7 @@ This guide is designed to help beginners set up a SODAQ ExpLoRer to connect to T
 ## What you will need
 To follow this guide you will need the following things:
 - A SODAQ ExpLoRer which can be bought [here](https://shop.sodaq.com/explorerrn2903a-us.html)
- - see [here](https://support.sodaq.com/Boards/ExpLoRer/) for support documents.
+  - see [here](https://support.sodaq.com/Boards/ExpLoRer/) for support documents.
 - A micro USB connector which is included with the SODAQ ExpLoRer
 - A computer to connect to the SODAQ ExpLoRer and write the code
 
