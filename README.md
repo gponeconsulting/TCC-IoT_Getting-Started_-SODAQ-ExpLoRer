@@ -5,7 +5,7 @@ This guide is designed to help beginners set up a SODAQ ExpLoRer to connect to T
 ## What you will need
 To follow this guide you will need the following things:
 - A SODAQ ExpLoRer which can be bought [here](https://shop.sodaq.com/explorerrn2903a-us.html)
-  - see [here](https://support.sodaq.com/Boards/ExpLoRer/) for support documents.
+    - see [here](https://support.sodaq.com/Boards/ExpLoRer/) for support documents.
 - A micro USB connector which is included with the SODAQ ExpLoRer
 - A computer to connect to the SODAQ ExpLoRer and write the code
 
@@ -175,11 +175,11 @@ void loop() {
 Now that our environment is set up and we have the SODAQ ExpLoRer EUI code, we can prepare to connect it to The Things Network by following the steps below.
 
 1. Sign in to [The Things Network](https://thethingsnetwork.org)
-  - Or create an account if you don't have one at [The Things Network](https://account.thethingsnetwork.org/register)
+    - Or create an account if you don't have one at [The Things Network](https://account.thethingsnetwork.org/register)
 1. Go to the console by clicking on the profile icon and clicking the console option.
 1. Select applications.
 1. Choose an existing application if you already have one you'd like to use, or select add application.
-  - If making a new application. Fill out the application ID with a unique name, add a Description and press `add application`.
+    - If making a new application. Fill out the application ID with a unique name, add a Description and press `add application`.
 1. Press the `register device` button in the devices section.
 1. Enter a unique name for the device ID.
 1. Enter the EUI code you copied from the previous step into the `Device EUI` section.
