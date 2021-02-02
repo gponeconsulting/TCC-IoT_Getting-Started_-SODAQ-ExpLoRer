@@ -5,7 +5,7 @@ This guide is designed to help beginners set up a SODAQ ExpLoRer to connect to T
 ## What you will need
 To follow this guide you will need the following things:
 - A SODAQ ExpLoRer which can be bought [here](https://shop.sodaq.com/explorerrn2903a-us.html)
-- A micro usb connector which is included with the SODAQ ExpLoRer
+- A micro USB connector which is included with the SODAQ ExpLoRer
 - A computer to connect to the SODAQ ExpLoRer and write the code
 
 You will also need to be in range of a Gateway connected to The Things Network which you can find out about [here](https://www.thethingsnetwork.org/community).
@@ -45,7 +45,7 @@ Once all of the installs are complete, click close, as the environment is now fi
 ## Test that the SODAQ ExpLoRer is Working (Optional)
 To test that the SODAQ ExpLoRer is connected properly and working complete the following steps:
 
-- First, plug in your SODAQ ExpLoRa to your computer using the micro usb cable.
+- First, plug in your SODAQ ExpLoRer to your computer using the micro USB cable.
 - Then Navigate to `Tools > Port:` and ensure that the port that has the SODAQ device is selected.
 - Next, Navigate to `File > Examples > 01.Basics > Blink`
 
@@ -59,7 +59,7 @@ After a short time the code will finish uploading and the LED on the SODAQ ExpLo
 ## Step 2 - Getting your device EUI
 
 The device EUI is a code that will be used to identify the device and will be needed when adding the device to The Things Network.
-- First, plug in your SODAQ ExpLoRa to your computer using the micro usb cable.
+- First, plug in your SODAQ ExpLoRer to your computer using the micro USB cable.
 - Then Navigate to `Tools > Port:` and ensure that the port that has the SODAQ device is selected.
 - Next, Replace the text in the main section of the Arduino IDE with the following code
 ```
@@ -194,7 +194,7 @@ void setup()
   // Wait a maximum of 10s for Serial Monitor
   while (!debugSerial && millis() < 10000)
     ;
-    
+
   pinMode(BUTTON, INPUT);
 
   debugSerial.println("-- STATUS");
