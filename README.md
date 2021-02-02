@@ -77,9 +77,9 @@ Now that you have selected the correct Board there are three Libraries to instal
 
 1. First, open the library manager by going to `Tools -> Manage Libraries`
 1. Next, in the bar at the top of the window search for and install the following libraries. _(much like installing the `SODAQ SAMD Boards` in the Boards Manager)_
-  - `Sodaq_RN2483`
-  - `Sodaq_wdt`
-  - `TheThingsNetwork`
+    - `Sodaq_RN2483`
+    - `Sodaq_wdt`
+    - `TheThingsNetwork`
 1. Once all of the installs are complete, click close, as the environment is now finished setting up.
 
 ![Install Libraries](readme-images/libraries.png)
@@ -175,11 +175,11 @@ void loop() {
 Now that our environment is set up and we have the SODAQ ExpLoRer EUI code, we can prepare to connect it to The Things Network by following the steps below.
 
 1. Sign in to [The Things Network](https://thethingsnetwork.org)
-  * Or create an account if you don't have one at [The Things Network](https://account.thethingsnetwork.org/register)
+  - Or create an account if you don't have one at [The Things Network](https://account.thethingsnetwork.org/register)
 1. Go to the console by clicking on the profile icon and clicking the console option.
 1. Select applications.
 1. Choose an existing application if you already have one you'd like to use, or select add application.
-  * If making a new application. Fill out the application ID with a unique name, add a Description and press `add application`.
+  - If making a new application. Fill out the application ID with a unique name, add a Description and press `add application`.
 1. Press the `register device` button in the devices section.
 1. Enter a unique name for the device ID.
 1. Enter the EUI code you copied from the previous step into the `Device EUI` section.
