@@ -91,7 +91,7 @@ The device EUI is a code that will be used to identify the device and will be ne
 1. Then Navigate to `Tools -> Port:` and ensure that the port that has the SODAQ device is selected.
 1. Next, Replace the text in the main section of the Arduino IDE with the following code:
 
-```
+```C++
 /**
  * Works with:
  * SODAQ Mbili
@@ -209,7 +209,7 @@ In the code that has just been opened in the new window, we will need to change 
 The APPEUI and, APPKEY come from the Device Overview that you created in Step 3 - Setup on The Things Network.
 
 Find this section of code, and replace the 0's with the actual codes
-```
+```C++
 // Set your AppEUI and AppKey
 const char *appEui = "0000000000000000";
 const char *appKey = "00000000000000000000000000000000";
@@ -217,7 +217,7 @@ const char *appKey = "00000000000000000000000000000000";
 
 Also change the values of the variables `loraSerial`, `debugSerial` and `freqPlan` to the following.
 
-```
+```C++
 #define loraSerial Serial2
 #define debugSerial SerialUSB
 
@@ -247,8 +247,8 @@ Then changing the payload to be `payload[0] = (digitalRead(BUTTON) == HIGH) ? 1 
 
 When run this will make the SODAQ ExpLoRer send a 1 if the button is not being pressed and a 0 if the button is being pressed.
 
-Below is the final Code for the setup and loop functions:
-```
+Below is the final Code for the **setup** and **loop** functions:
+```C++
 void setup()
 {
   loraSerial.begin(57600);
