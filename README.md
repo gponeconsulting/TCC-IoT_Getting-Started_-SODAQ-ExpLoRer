@@ -5,7 +5,7 @@ This guide is designed to help beginners set up a SODAQ ExpLoRer to connect to T
 ## What you will need
 To follow this guide you will need the following things:
 - A SODAQ ExpLoRer which can be bought [here](https://shop.sodaq.com/explorerrn2903a-us.html)
- - see [here](https://support.sodaq.com/Boards/ExpLoRer/) for support documents.
+  - see [here](https://support.sodaq.com/Boards/ExpLoRer/) for support documents.
 - A micro USB connector which is included with the SODAQ ExpLoRer
 - A computer to connect to the SODAQ ExpLoRer and write the code
 
@@ -18,7 +18,7 @@ To set up the device, plug the Arduino into your computer.
 
 1. Use the USB port on the SODAQ ExpLoRer and the USB cable to connect to a computer.
 
-![SODAQ ExpLoRer Physical Setup](readme-images/sodaq-physical-setup.png)
+![SODAQ ExpLoRer Physical Setup](readme-images/physical-setup.png)
 
 ## Step 2 - Setting up the environment
 ### Install Arduino IDE
@@ -77,9 +77,9 @@ Now that you have selected the correct Board there are three Libraries to instal
 
 1. First, open the library manager by going to `Tools -> Manage Libraries`
 1. Next, in the bar at the top of the window search for and install the following libraries. _(much like installing the `SODAQ SAMD Boards` in the Boards Manager)_
- - `Sodaq_RN2483`
- - `Sodaq_wdt`
- - `TheThingsNetwork`
+  - `Sodaq_RN2483`
+  - `Sodaq_wdt`
+  - `TheThingsNetwork`
 1. Once all of the installs are complete, click close, as the environment is now finished setting up.
 
 ![Install Libraries](readme-images/libraries.png)
