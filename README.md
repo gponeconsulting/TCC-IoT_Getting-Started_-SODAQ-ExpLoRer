@@ -191,7 +191,7 @@ Now that our environment is set up and we have the SODAQ ExpLoRer EUI code, we c
 1. Give your device a name and description
 1. Click `Network layer setting`.
 1. Set the Frequency plan as `Australia 915-928 MHz, FSB 2`
-1. Set the Regional Parameters version to `PHY V1.0.2 REV A`
+1. Set the Regional Parameters version to `PHY V1.0.2 REV B`
 1. Click `Join settings`
 1. Click the Generate button next to the AppKey field
 1. Click the `Add End Device` button
@@ -250,7 +250,7 @@ Click the arrow in the upper left corner to upload the code to the SODAQ ExpLoRe
 
 After waiting for the code to upload you can now open the Serial Monitor through `Tools -> Serial Monitor` and see the output. If everything went well it should post a Successful transmission every 10 seconds which you will also be able to see on the things stack website in the device data section.
 
-*Don't be worried if it fails to connect a few times. In the screenshot below, the first attempt to connect failed (yellow line), and the second attempt was successful (blue line)*
+*Don't be worried if it fails to connect a few times. sometimes it may take a while to get a successful transmission*
 
 ![Connect Successful](readme-images/connect-transmit.png)
 
