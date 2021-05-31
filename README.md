@@ -1,6 +1,6 @@
 # SODAQ ExpLoRer Guide
 
-This guide is designed to help beginners set up a SODAQ ExpLoRer to connect to The Things Network.
+This guide is designed to help beginners set up a SODAQ ExpLoRer to connect to The Things Stack.
 
 ## What you will need
 To follow this guide you will need the following things:
@@ -9,7 +9,7 @@ To follow this guide you will need the following things:
 - A micro USB connector which is included with the SODAQ ExpLoRer
 - A computer to connect to the SODAQ ExpLoRer and write the code
 
-You will also need to be in range of a Gateway connected to The Things Network which you can find out about [here](https://www.thethingsnetwork.org/community).
+You will also need to be in range of a Gateway connected to The Things Stack Community Edition which you can find out about [here](https://www.thethingsnetwork.org/community).
 
 ## Step 1 - Physical Setup
 To set up the device, plug the Arduino into your computer.
@@ -85,7 +85,7 @@ Now that you have selected the correct Board there are three Libraries to instal
 ![Install Libraries](readme-images/libraries.png)
 
 ### Getting your device EUI
-The device EUI is a code that will be used to identify the device and will be needed when adding the device to The Things Network.
+The device EUI is a code that will be used to identify the device and will be needed when adding the device to The Things Stack.
 
 1. First, plug in your SODAQ ExpLoRer to your computer using the micro USB cable.
 1. Then Navigate to `Tools -> Port:` and ensure that the port that has the SODAQ device is selected.
@@ -171,19 +171,30 @@ void loop() {
 
 > Be careful of trailing 'special characters' the code in the screenshot above ends in "E75" followed by a box. Be careful to only copy the 16-character EUI only in the following steps
 
-## Step 3 - Sign Up on The Things Network
-Now that our environment is set up and we have the SODAQ ExpLoRer EUI code, we can prepare to connect it to The Things Network by following the steps below.
+## Step 3 - Sign Up on The Things Stack
+Now that our environment is set up and we have the SODAQ ExpLoRer EUI code, we can prepare to connect it to The Things Stack by following the steps below.
 
-1. Sign in to [The Things Network](https://thethingsnetwork.org)
-    - Or create an account if you don't have one at [The Things Network](https://account.thethingsnetwork.org/register)
-1. Go to the console by clicking on the profile icon and clicking the console option.
-1. Select applications.
+1. Sign in to [The Things Stack](https://eu1.cloud.thethings.network/oauth/login?)
+    - Or create an account if you don't have one at [The Things Network](https://account.thethingsnetwork.org/register). Then sign in to [The Things Stack](https://eu1.cloud.thethings.network/oauth/login?)
+1. Go to the console by clicking on the `Go to the Console` button.
+1. Select the `Australia 1` option if asked to select a cluster
+1. Select `Go to applications`.
 1. Choose an existing application if you already have one you'd like to use, or select add application.
-    - If making a new application. Fill out the application ID with a unique name, add a Description and press `add application`.
-1. Press the `register device` button in the devices section.
+    - If making a new application. Fill out the application ID with a unique name, add a Description and press `create application`.
+1. Press the `Add end device` button in the end devices section.
+1. Press the 'Manually' tab
+1. Set the LoRaWAN version to 'MAC V1.0.2'
+1. Click `Start`
 1. Enter a unique name for the device ID.
-1. Enter the EUI code you copied from the previous step into the `Device EUI` section.
-1. Click `Register`.
+1. Press the `fill with zeros` button next to the AppEUI field
+1. Enter the device EUI code you copied from the previous step into the `Device EUI` section.
+1. Give your device a name and description
+1. Click `Network layer setting`.
+1. Set the Frequency plan as `Australia 915-928 MHz, FSB 2`
+1. Set the Regional Parameters version to `PHY V1.0.2 REV B`
+1. Click `Join settings`
+1. Click the Generate button next to the AppKey field
+1. Click the `Add End Device` button
 
 > Your device will now be registered and is ready to connect
 
@@ -191,12 +202,18 @@ Now that our environment is set up and we have the SODAQ ExpLoRer EUI code, we c
 
 ![Register Device](readme-images/register-device.png)
 
-We are now be on a page which includes a device overview. Information on this page will be used to configure the Arduino to connect and Authenticate with The Things Network.
+![Register Device](readme-images/register-device-2.png)
+
+![Register Device](readme-images/register-device-3.png)
+
+![Register Device](readme-images/register-device-4.png)
+
+We are now be on a page which includes a device overview. Information on this page will be used to configure the Arduino to connect and Authenticate with The Things Stack.
 
 ![Registered Device](readme-images/registered-device.png)
 
-## Step 4 - Connecting The SODAQ ExpLoRer to The Things Network
-Now that a device is registered on The Things Network all that is left to do is configure the Arduino with that registration.
+## Step 4 - Connecting The SODAQ ExpLoRer to The Things Stack
+Now that a device is registered on The Things Stack all that is left to do is configure the Arduino with that registration.
 
 - In the Arduino IDE Navigate to `File -> Examples -> TheThingsNetwork -> SendOTAA` which will open a new window.
 
@@ -206,7 +223,7 @@ In the code that has just been opened in the new window, we will need to change 
 1. APPEUI
 1. APPKEY
 
-The APPEUI and, APPKEY come from the Device Overview that you created in Step 3 - Setup on The Things Network.
+The APPEUI and, APPKEY come from the Device Overview that you created in Step 3 - Setup on The Things Stack.
 
 Find this section of code, and replace the 0's with the actual codes
 ```C++
@@ -231,9 +248,9 @@ Also change the values of the variables `loraSerial`, `debugSerial` and `freqPla
 
 Click the arrow in the upper left corner to upload the code to the SODAQ ExpLoRer
 
-After waiting for the code to upload you can now open the Serial Monitor through `Tools -> Serial Monitor` and see the output. If everything went well it should post a Successful transmission every 10 seconds which you will also be able to see on the things network website in the device data section.
+After waiting for the code to upload you can now open the Serial Monitor through `Tools -> Serial Monitor` and see the output. If everything went well it should post a Successful transmission every 10 seconds which you will also be able to see on the things stack website in the device data section.
 
-*Don't be worried if it fails to connect a few times. In the screenshot below, the first attempt to connect failed (yellow line), and the second attempt was successful (blue line)*
+*Don't be worried if it fails to connect a few times. sometimes it may take a while to get a successful transmission*
 
 ![Connect Successful](readme-images/connect-transmit.png)
 
